@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "All the typings for the various Spotify API Object typings written in typescript.",
   "main": "index.js",
-  "types": "index.d.ts",
-  "scripts": {
-    "build": "npx tsc --project tsconfig.json"
-  },
+  "types": "typings/index.d.ts",
   "keywords": [
     "spotify",
     "spotify-api.js",
