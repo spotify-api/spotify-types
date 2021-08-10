@@ -1,0 +1,19 @@
+{
+  "name": "spotify-api-types",
+  "version": "1.0.0",
+  "description": "All the typings for the various Spotify API Object typings written in typescript.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "npx tsc --project tsconfig.json"
+  },
+  "keywords": [
+    "spotify",
+    "spotify-api.js",
+    "spotify-api-types",
+    "spotify-types",
+    "spotify-api"
+  ],
+  "author": "science_spot_codes",
+  "license": "MIT"
+}
