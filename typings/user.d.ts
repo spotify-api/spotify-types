@@ -50,9 +50,9 @@ export interface PrivateUser extends PublicUser {
  * 
  * @see https://developer.spotify.com/documentation/web-api/reference/#object-publicuserobject
  */
- export interface PublicUser {
+export interface PublicUser {
     /** The name displayed on the user’s profile. null if not available. */
-    display_name: string;
+    display_name: string | null;
     /** A link to the Web API endpoint for this user. */
     href: string;
     /** The Spotify user ID for the user. */
