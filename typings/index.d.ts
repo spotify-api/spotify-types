@@ -2,3 +2,8 @@ export * from './global';
 export * from './user';
 export * from './track';
 export * from './artist';
+export * from './album';
+export * from './player';
+export * from './episode';
+export * from './show';
+export * from './browse';

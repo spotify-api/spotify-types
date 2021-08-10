@@ -28,6 +28,20 @@ export interface ExternalUrl {
 }
 
 /**
+ * The external ids object which contains the spotify id within it.
+ * 
+ * @see https://developer.spotify.com/documentation/web-api/reference/#object-externalidobject
+ */
+export interface ExternalID {
+    /** International Article Number */
+    ean: string;
+    /** International Standard Recording Code */
+    isrc: string;
+    /** Universal Product Code */
+    upc: string;
+}
+
+/**
  * The paging object is a form of collection of items from the spotify api.
  * 
  * @see https://developer.spotify.com/documentation/web-api/reference/#object-pagingobject
@@ -48,3 +62,40 @@ export interface Paging<T> {
     /** The total number of items available to return. */
     total: number;
 }
+
+/**
+ * The copyright object contains the type and the name of copyright.
+ * 
+ * @see https://developer.spotify.com/documentation/web-api/reference/#object-copyrightobject
+ */
+export interface Copyright {
+    /** The text of copyright. */
+    text: string;
+    /** The type of copyright. */
+    type: 'C' | 'P';
+}
+
+/**
+ * The object containing the reason of restriction by the spotify api.
+ */
+export interface Restriction {
+    /** The reason for the restriction. */
+    reason: 'market' | 'product' | 'explicit';
+}
+
+/**
+ * The error response sent by the spotify api during unusual status codes.
+ * 
+ * @see https://developer.spotify.com/documentation/web-api/reference/#object-errorobject
+ */
+export interface ErrorResponse {
+    /** A short description of the cause of the error. */
+    message: string;
+    /** The HTTP status code (also returned in the response header; see Response Status Codes for more information). */
+    status: number;
+}
+
+/**
+ * The object containing the saved elements and the timestamp when they were added.
+ */
+export type Saved<K extends SpotifyType, T> = { added_at: string } & Record<K, T>;
