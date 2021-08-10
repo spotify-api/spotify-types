@@ -28,7 +28,7 @@ export interface SimplifiedArtist {
  */
 export interface Artist extends SimplifiedArtist {
     /** Information about the followers of the artist. */
-    followers: Followers,
+    followers: Followers;
     /** A list of the genres the artist is associated with. For example: "Prog Rock" , "Post-Grunge". (If not yet classified, the array is empty.) */
     genres: string[];
     /** Images of the artist in various sizes, widest first. */
