@@ -8,6 +8,11 @@ import { Copyright, ExternalID, ExternalUrl, Image, SpotifyType, Restriction, Sa
 export type AlbumType = 'single' | 'album' | 'compilation';
 
 /**
+ * The groups of album.
+ */
+export type AlbumGroup = AlbumType | 'appears_on';
+
+/**
  * The saved album object.
  */
 export type SavedAlbum = Saved<'album', Album>
@@ -41,7 +46,7 @@ export interface Album extends Omit<SimplifiedAlbum, 'album_group'> {
  */
 export interface SimplifiedAlbum {
     /** The field is present when getting an artist’s albums. */
-    album_group: 'album' | 'single' | 'compilation' | 'appears_on';
+    album_group: AlbumGroup;
     /** The type of album. */
     album_type: AlbumType;
     /** The artists of the album. */
