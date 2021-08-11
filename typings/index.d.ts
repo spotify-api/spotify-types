@@ -4,6 +4,7 @@ export * from './track';
 export * from './artist';
 export * from './album';
 export * from './player';
+export * from './playlist';
 export * from './episode';
 export * from './show';
 export * from './browse';
