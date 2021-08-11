@@ -12,7 +12,7 @@ export interface PlaylistTracksReference {
     /** A link to the Web API endpoint where full details of the playlist’s tracks can be retrieved. */
     href: string;
     /** The total number of tracks in playlist. */
-    total: string;
+    total: number;
 }
 
 /**
@@ -75,8 +75,4 @@ export interface Playlist extends Omit<SimplifiedPlaylist, 'tracks'> {
     public: boolean | null;
     /** Information about the tracks of the playlist. Note, a track object may be null. This can happen if a track is no longer available. */
     tracks: PlaylistTrack[];
-    /** The object type: “playlist” */
-    type: SpotifyType;
-    /** The Spotify URI for the playlist. */
-    uri: string;
 }
