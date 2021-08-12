@@ -10,6 +10,11 @@ import { SimplifiedShow } from "./show";
 export type SpotifyType = 'user' | 'episode' | 'playlist' | 'show' | 'track' | 'album' | 'artist';
 
 /**
+ * All the spotify search types.
+ */
+export type SearchType = 'album' | 'artist' | 'track' |  'show' | 'episode';
+
+/**
  * The spotify object containing the details of an image.
  * 
  * @see https://developer.spotify.com/documentation/web-api/reference/#object-imageobject
