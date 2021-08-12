@@ -1,7 +1,7 @@
 import { Followers, PublicUser } from "./user";
 import { Track } from "./track";
 import { Episode } from "./episode";
-import { ExternalUrl, Image, SpotifyType } from "./global";
+import { ExternalUrl, Image, Paging, SpotifyType } from "./global";
 
 /**
  * The structure containing the reference for the tracks of the playlist..
@@ -75,4 +75,14 @@ export interface Playlist extends Omit<SimplifiedPlaylist, 'tracks'> {
     public: boolean | null;
     /** Information about the tracks of the playlist. Note, a track object may be null. This can happen if a track is no longer available. */
     tracks: PlaylistTrack[];
+}
+
+/**
+ * The structure returned by the [/browse/featured-playlists] endpoint.
+ */
+export interface FeaturedPlaylists {
+    /** The message from the featured playlists. */
+    message: string;
+    /** The list of the featured playlists wrapped in Paging object. */
+    playlists: Paging<Playlist>
 }
