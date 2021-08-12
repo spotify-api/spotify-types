@@ -1,6 +1,6 @@
 import { Artist, SimplifiedArtist } from "./artist";
 import { SimplifiedTrack } from "./track";
-import { Copyright, ExternalID, ExternalUrl, Image, SpotifyType, Restriction, Saved } from "./global";
+import { Copyright, ExternalID, ExternalUrl, Image, SpotifyType, Restriction, Saved, Paging } from "./global";
 
 /**
  * The types of album.
@@ -35,8 +35,8 @@ export interface Album extends Omit<SimplifiedAlbum, 'album_group'> {
     label: string;
     /** The popularity of the album. The value will be between 0 and 100, with 100 being the most popular. The popularity is calculated from the popularity of the album’s individual tracks. */
     popularity: number;
-    /** The tracks of the album. */
-    tracks: SimplifiedTrack[];
+    /** The tracks of the album. The object index says this is an array but the value returns as a Paging object so here is an union might be fixed in upcomming versions. */
+    tracks: SimplifiedTrack[] | Paging<SimplifiedTrack>;
 }
 
 /**
