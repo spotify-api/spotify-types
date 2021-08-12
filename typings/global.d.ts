@@ -1,3 +1,9 @@
+import { Artist } from "./artist";
+import { Track } from "./track";
+import { SimplifiedAlbum } from "./album";
+import { SimplifiedEpisode } from "./episode";
+import { SimplifiedShow } from "./show";
+
 /**
  * All the spotify element types
  */
@@ -99,3 +105,19 @@ export interface ErrorResponse {
  * The object containing the saved elements and the timestamp when they were added.
  */
 export type Saved<K extends SpotifyType, T> = { added_at: string } & Record<K, T>;
+
+/** 
+ * The object structure returned by the [/search] endpoint.
+ */
+export interface SearchContent {
+    /** The episode search results. */
+    episodes?: Paging<SimplifiedEpisode>;
+    /** The show search results. */
+    shows?: Paging<SimplifiedShow>;
+    /** The track search results. */
+    tracks?: Paging<Track>;
+    /** The artists search results. */
+    artists?: Paging<Artist>;
+    /** the album search results. */
+    albums?: Paging<SimplifiedAlbum>;
+}
