@@ -86,3 +86,17 @@ export interface FeaturedPlaylists {
     /** The list of the featured playlists wrapped in Paging object. */
     playlists: Paging<Playlist>
 }
+
+/**
+ * The query structure required by the [/users/{id}/playlists] enpoint.
+ */
+export interface CreatePlaylistQuery {
+    /** The name for the new playlist, for example "Your Coolest Playlist". */
+    name: string;
+    /** Defaults to true. If true the playlist will be public. */
+    public?: boolean;
+    /** Defaults to false. If true the playlist will be collaborative. */
+    collaboratve?: boolean;
+    /** The description for the playlist. */
+    description?: string;
+}
