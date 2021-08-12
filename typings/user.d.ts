@@ -43,6 +43,10 @@ export interface PrivateUser extends PublicUser {
     product?: UserProductType;
     /** The user’s explicit content settings. */
     explicit_content: ExplicitContentSettings;
+    /** The user’s profile image. */
+    images: Image[];
+    /** Information about the followers of the user. */
+    followers: Followers;
 }
 
 /**
@@ -62,9 +66,9 @@ export interface PublicUser {
     /** The Spotify object type which will be 'User'. */
     type: SpotifyType;
     /** The user’s profile image. */
-    images: Image[];
+    images?: Image[];
     /** Information about the followers of the user. */
-    followers: Followers;
+    followers?: Followers;
     /** Known external URLs for this user. */
     external_urls: ExternalUrl;
 }
