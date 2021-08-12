@@ -1,5 +1,5 @@
 import { Image } from "./global";
-import { SimplifiedTrack } from "./track";
+import { SimplifiedTrack, TuneableTrack } from "./track";
 
 /**
  * An object containing details about the spotify category.
@@ -47,4 +47,25 @@ export interface Recommendations {
     seeds: RecommendationSeed[];
     /** An array of track object (simplified) ordered according to the parameters supplied. */
     tracks: SimplifiedTrack[];
+}
+
+/**
+ * Just an extension for [RecommendationQuery].
+ */
+export type RecommendationQueryExtension<T extends string> = Partial<Record<`min_${T}` | `max_${T}` | `target_${T}`, number>>;
+
+/**
+ * The query paramater structure of the [/recommendations] endpoint.
+ */
+export interface RecommendationQuery extends RecommendationQueryExtension<keyof TuneableTrack> {
+    /** The target size of the list of recommended tracks. */
+    limit?: number;
+    /** An ISO 3166-1 alpha-2 country code or the string from_token. */
+    market?: string;
+    /** A comma separated list of Spotify IDs for seed artists. Up to 5 seed values may be provided in any combination of seed_artists, seed_tracks and seed_genres **/
+    seed_artists: string;
+    /** A comma separated list of any genres in the set of available genre seeds. Up to 5 seed values may be provided in any combination of seed_artists, seed_tracks and seed_genres. */
+    seed_genres: string;
+    /** A comma separated list of Spotify IDs for a seed track. Up to 5 seed values may be provided in any combination of seed_artists, seed_tracks and seed_genres. */
+    seed_tracks: string;
 }
