@@ -21,11 +21,11 @@ export type SearchType = 'album' | 'artist' | 'track' |  'show' | 'episode';
  */
 export interface Image {
     /** The image height in pixels. If unknown: null or not returned. */
-    height: number;
+    height: number | null;
     /** The source URL of the image. */
     url: string;
     /** The image width in pixels. If unknown: null or not returned. */
-    width: number;
+    width: number | null;
 }
 
 /**
