@@ -16,7 +16,7 @@ export interface SimplifiedTrack {
     /** The artists who performed the track. Each artist object includes a link in href to more detailed information about the artist. */
     artists: SimplifiedArtist[];
     /** A list of the countries in which the track can be played. */
-    available_markets: string[];
+    available_markets?: string[];
     /** The disc number (usually 1 unless the album consists of more than one disc). */
     disc_number: number;
     /** The track length in milliseconds. */

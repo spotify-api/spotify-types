@@ -46,13 +46,13 @@ export interface Album extends Omit<SimplifiedAlbum, 'album_group'> {
  */
 export interface SimplifiedAlbum {
     /** The field is present when getting an artist’s albums. */
-    album_group: AlbumGroup;
+    album_group?: AlbumGroup;
     /** The type of album. */
     album_type: AlbumType;
     /** The artists of the album. */
     artists: SimplifiedArtist[];
     /** The markets in which the album is available. */
-    available_markets: string[];
+    available_markets?: string[];
     /** Known external URLs for this album. */
     external_urls: ExternalUrl;
     /** A link to the Web API endpoint providing full details of the album. */
