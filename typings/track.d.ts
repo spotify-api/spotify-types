@@ -139,11 +139,79 @@ export interface TuneableTrack {
 
 /**
  * Time interval object of [TrackAudioAnalysis].
+ * No documentation found for the object.
  */
 export interface TimeInterval {
     start: number;
     duration: number;
     confidence: number;
+}
+
+/**
+ * The element structure of the array of [AudioAnalysis.sections] property.
+ * No documentation found for the object.
+ */
+export interface AudioSection {
+    start: number;
+    duration: number;
+    confidence: number;
+    loudness: number;
+    tempo: number;
+    tempo_confidence: number;
+    key: number;
+    key_confidence: number;
+    mode: number;
+    mode_confidence: number;
+    time_signature: number;
+    time_signature_confidence: number;
+}
+
+/**
+ * The element structure of the array of [AudioAnalysis.segments] property.
+ * No documentation found for the object.
+ */
+export interface AudioSegment {
+    start: number;
+    duration: number;
+    confidence: number;
+    loudness_start: number;
+    loudness_max: number;
+    loudness_max_time: number;
+    loudness_end: number;
+    pitches: number[];
+    timbre: number[];
+}
+
+/**
+ * The object structure of [AudioAnalysis.track] property.
+ * No documentation found for the object.
+ */
+export interface AudioTrack {
+    duration: number;
+    sample_md5: string;
+    offset_seconds: number;
+    window_seconds: number;
+    analysis_sample_rate: number;
+    analysis_channels: number;
+    end_of_fade_in: number;
+    start_of_fade_out: number;
+    loudness: number;
+    tempo: number;
+    tempo_confidence: number;
+    time_signature: number;
+    time_signature_confidence: number;
+    key: number;
+    key_confidence: number;
+    mode: number;
+    mode_confidence: number;
+    codestring: string;
+    code_version: number;
+    echoprintstring: string;
+    echoprint_version: number;
+    synchstring: string;
+    synch_version: number;
+    rhythmstring: string;
+    rhythm_version: number;
 }
 
 /**
@@ -154,56 +222,7 @@ export interface AudioAnalysis {
     bars: TimeInterval[];
     beats: TimeInterval[];
     tatums: TimeInterval[];
-    sections: {
-        start: number;
-        duration: number;
-        confidence: number;
-        loudness: number;
-        tempo: number;
-        tempo_confidence: number;
-        key: number;
-        key_confidence: number;
-        mode: number;
-        mode_confidence: number;
-        time_signature: number;
-        time_signature_confidence: number;
-    }[];
-    segments: {
-        start: number;
-        duration: number;
-        confidence: number;
-        loudness_start: number;
-        loudness_max: number;
-        loudness_max_time: number;
-        loudness_end: number;
-        pitches: number[];
-        timbre: number[];
-    }[];
-    track: {
-        duration: number;
-        sample_md5: string;
-        offset_seconds: number;
-        window_seconds: number;
-        analysis_sample_rate: number;
-        analysis_channels: number;
-        end_of_fade_in: number;
-        start_of_fade_out: number;
-        loudness: number;
-        tempo: number;
-        tempo_confidence: number;
-        time_signature: number;
-        time_signature_confidence: number;
-        key: number;
-        key_confidence: number;
-        mode: number;
-        mode_confidence: number;
-        codestring: string;
-        code_version: number;
-        echoprintstring: string;
-        echoprint_version: number;
-        synchstring: string;
-        synch_version: number;
-        rhythmstring: string;
-        rhythm_version: number;
-    };
+    sections: AudioSection[];
+    segments: AudioSegment[];
+    track: AudioTrack;
 }
