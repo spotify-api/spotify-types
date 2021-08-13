@@ -1,5 +1,5 @@
 import { SimplifiedEpisode } from "./episode";
-import { Copyright, ExternalUrl, Image, Saved, SpotifyType } from "./global";
+import { Copyright, ExternalUrl, Image, Paging, Saved, SpotifyType } from "./global";
 
 /**
  * The saved show object.
@@ -13,7 +13,7 @@ export type SavedShow = Saved<'show', Show>;
  */
 export interface Show extends SimplifiedShow {
     /** A list of the show’s episodes. */
-    episodes: SimplifiedEpisode[];
+    episodes: SimplifiedEpisode[] | Paging<SimplifiedEpisode>;
 }
 
 /**
