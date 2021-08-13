@@ -42,7 +42,7 @@ export interface PrivateUser extends PublicUser {
     /** The user’s Spotify subscription level. */
     product?: UserProductType;
     /** The user’s explicit content settings. */
-    explicit_content: ExplicitContentSettings;
+    explicit_content?: ExplicitContentSettings;
     /** The user’s profile image. */
     images: Image[];
     /** Information about the followers of the user. */
