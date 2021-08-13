@@ -136,3 +136,74 @@ export interface TuneableTrack {
     /** A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. */
     valence: number;
 }
+
+/**
+ * Time interval object of [TrackAudioAnalysis].
+ */
+export interface TimeInterval {
+    start: number;
+    duration: number;
+    confidence: number;
+}
+
+/**
+ * The object structure returned by [/audio-analysis/{id}] endpoint.
+ * No documentation found for the object.
+ */
+export interface AudioAnalysis {
+    bars: TimeInterval[];
+    beats: TimeInterval[];
+    tatums: TimeInterval[];
+    sections: {
+        start: number;
+        duration: number;
+        confidence: number;
+        loudness: number;
+        tempo: number;
+        tempo_confidence: number;
+        key: number;
+        key_confidence: number;
+        mode: number;
+        mode_confidence: number;
+        time_signature: number;
+        time_signature_confidence: number;
+    }[];
+    segments: {
+        start: number;
+        duration: number;
+        confidence: number;
+        loudness_start: number;
+        loudness_max: number;
+        loudness_max_time: number;
+        loudness_end: number;
+        pitches: number[];
+        timbre: number[];
+    }[];
+    track: {
+        duration: number;
+        sample_md5: string;
+        offset_seconds: number;
+        window_seconds: number;
+        analysis_sample_rate: number;
+        analysis_channels: number;
+        end_of_fade_in: number;
+        start_of_fade_out: number;
+        loudness: number;
+        tempo: number;
+        tempo_confidence: number;
+        time_signature: number;
+        time_signature_confidence: number;
+        key: number;
+        key_confidence: number;
+        mode: number;
+        mode_confidence: number;
+        codestring: string;
+        code_version: number;
+        echoprintstring: string;
+        echoprint_version: number;
+        synchstring: string;
+        synch_version: number;
+        rhythmstring: string;
+        rhythm_version: number;
+    };
+}
