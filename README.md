@@ -1,4 +1,4 @@
-# Spotify API Types
+# Spotify Types
 
 **Module Documentation Reference:** https://spotify-api.js.org/apiTypes/<br/>
 **Spotify Object Index Reference:** https://developer.spotify.com/documentation/web-api/reference/#objects-index
