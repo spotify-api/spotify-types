@@ -1,5 +1,5 @@
 {
-  "name": "spotify-api-types",
+  "name": "spotify-types",
   "version": "1.0.0",
   "description": "All the typings for the various Spotify API Object typings written in typescript.",
   "main": "index.js",
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/spotify-api/spotify-api-types"
+    "url": "https://github.com/spotify-api/spotify-types"
   },
   "author": "science_spot_codes",
   "license": "MIT"
