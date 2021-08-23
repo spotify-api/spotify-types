@@ -11,6 +11,10 @@
     "spotify-types",
     "spotify-api"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spotify-api/spotify-api-types"
+  },
   "author": "science_spot_codes",
   "license": "MIT"
 }
