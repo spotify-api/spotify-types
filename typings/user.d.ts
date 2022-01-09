@@ -8,7 +8,7 @@ export type UserProductType = "free" | "open" | "premium";
 /**
  * The token type in the AccessToken object.
  */
-export type AccessTokenType = "Bearer";
+export type AccessTokenType = "bearer";
 
 /**
  * The spotify api object containing the details of the followers of a user.
@@ -86,7 +86,7 @@ export interface PublicUser {
 export interface AccessToken {
     /** The token used to access the Spotify Web API */
     access_token: string;
-    /** The type of token which is of type Bearer */
+    /** The type of token which is of type bearer */
     token_type: AccessTokenType;
     /** The time after which the access token expires */
     expires_in: number;
