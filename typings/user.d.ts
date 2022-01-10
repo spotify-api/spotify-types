@@ -6,8 +6,13 @@ import { SpotifyType, Image, ExternalUrl } from "./global";
 export type UserProductType = "free" | "open" | "premium";
 
 /**
+ * The token type in the AccessToken object.
+ */
+export type AccessTokenType = "bearer";
+
+/**
  * The spotify api object containing the details of the followers of a user.
- * 
+ *
  * @see https://developer.spotify.com/documentation/web-api/reference/#object-followersobject
  */
 export interface Followers {
@@ -19,7 +24,7 @@ export interface Followers {
 
 /**
  * The spotify api object containing the information of explicit content.
- * 
+ *
  * @see https://developer.spotify.com/documentation/web-api/reference/#object-explicitcontentsettingsobject
  */
 export interface ExplicitContentSettings {
@@ -31,7 +36,7 @@ export interface ExplicitContentSettings {
 
 /**
  * The spotify api object containing details of a user's public and private details.
- * 
+ *
  * @see https://developer.spotify.com/documentation/web-api/reference/#object-privateuserobject
  */
 export interface PrivateUser extends PublicUser {
@@ -51,7 +56,7 @@ export interface PrivateUser extends PublicUser {
 
 /**
  * The spotify api object containing details of a user's public details.
- * 
+ *
  * @see https://developer.spotify.com/documentation/web-api/reference/#object-publicuserobject
  */
 export interface PublicUser {
@@ -71,4 +76,18 @@ export interface PublicUser {
     followers?: Followers;
     /** Known external URLs for this user. */
     external_urls: ExternalUrl;
+}
+
+/**
+ * The spotify api object containing the user's access token.
+ *
+ * @see https://developer.spotify.com/documentation/general/guides/authorization/client-credentials/
+ */
+export interface AccessToken {
+    /** The token used to access the Spotify Web API */
+    access_token: string;
+    /** The type of token which is of type bearer */
+    token_type: AccessTokenType;
+    /** The time after which the access token expires */
+    expires_in: number;
 }
