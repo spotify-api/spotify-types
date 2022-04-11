@@ -163,6 +163,31 @@ export interface Devices {
     devices: Device[];
 }
 
+/** 
+ * The recently played object which is returned by the [Player.getRecentlyPlayed] function. 
+ * 
+ * @see https://developer.spotify.com/documentation/web-api/reference/#/operations/get-recently-played
+ */
+export interface RecentlyPlayed {
+    /** The cursors to check other pages of recently played. */
+    cursors: Cursor;
+    /** A link to the Web API endpoint providing full details of the track. */
+    href: string;
+    /** The maximum number of items in the response (as set in the query or by default). */
+    limit: number;
+    /** URL to the next page of items. ( null if none) */
+    next?: string;
+    /** The total number of items available to return. */
+    total: number;
+    /** The items which have been recently played. */
+    items: {
+        /** The track which has been played recently. */
+        track: Track,
+        /** The timestamp when it was played. */
+        playedAt: string
+    }[];
+}
+
 /**
  * The play history object of the player api.
  * 
